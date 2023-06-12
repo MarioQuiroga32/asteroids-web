@@ -33,7 +33,7 @@ const App = () => {
         <AppWrapper>
             <Router>
                 <Routes>
-                    <Route exact path="/asteroids" element={
+                    <Route exact path="/" element={
                         <AsteroidsPage
                             searchTerm={searchTerm}
                             startDate={startDate}
