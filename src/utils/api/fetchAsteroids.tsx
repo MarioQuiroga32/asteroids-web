@@ -1,6 +1,6 @@
 export const fetchAsteroids = async ({startDate, endDate}) => {
     try {
-        const response = await fetch(`http://localhost:3000/asteroids${startDate && endDate ? `?startDate=${startDate}&endDate=${endDate}` : ''}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/asteroids${startDate && endDate ? `?startDate=${startDate}&endDate=${endDate}` : ''}`);
         if (!response.ok) {
             throw new Error('Failed to fetch asteroids');
         }

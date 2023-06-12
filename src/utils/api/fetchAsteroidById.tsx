@@ -1,6 +1,6 @@
 export const fetchAsteroidById = async (asteroidId) => {
     try {
-        const response = await fetch(`http://localhost:3000/asteroids/details/${asteroidId}`, {
+        const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/asteroids/details/${asteroidId}`, {
             method: 'GET',
         });
         if (!response.ok) {

@@ -1,6 +1,6 @@
 export const fetchFavoriteAsteroids = async () => {
     try {
-        const response = await fetch(`http://localhost:3000/asteroids/favorites`);
+        const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/asteroids/favorites`);
         if (!response.ok) {
             throw new Error('Failed to fetch asteroids');
         }
