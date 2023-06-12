@@ -1,24 +1,61 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import styled from 'styled-components';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { AsteroidsPage } from "./pages/AsteroidsPage";
+import { AsteroidDetailPage } from "./pages/AsteroidDetailPage";
 
-function App() {
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <p>Choo Choo! This is an example of a Vite + React app running on Railway.</p>
-      </div>
-    </>
-  )
-}
+const AppWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+`;
 
-export default App
+const App = () => {
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
+    const [orderBy, setOrderBy] = useState('name');
+
+    const handleDateChange = (start, end) => {
+        setStartDate(start);
+        setEndDate(end);
+    };
+
+    const handleOrderBy = (orderBy) => {
+        setOrderBy(orderBy);
+    }
+
+    return (
+        <AppWrapper>
+            <Router>
+                <Routes>
+                    <Route exact path="/asteroids" element={
+                        <AsteroidsPage
+                            searchTerm={searchTerm}
+                            startDate={startDate}
+                            endDate={endDate}
+                            orderBy={orderBy}
+                            onSearchTermChange={setSearchTerm}
+                            onDateChange={handleDateChange}
+                            onOrderByChange={handleOrderBy}
+                            handleDateChange={handleDateChange}
+                        />
+                    } />
+                    <Route path="/asteroids/:id" element={
+                        <AsteroidDetailPage
+                            searchTerm={searchTerm}
+                            startDate={startDate}
+                            endDate={endDate}
+                        />
+                    } />
+                </Routes>
+            </Router>
+        </AppWrapper>
+    );
+};
+
+export default App;
