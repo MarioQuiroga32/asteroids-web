@@ -2,6 +2,9 @@
 
 This project is a web application that displays a list of asteroids. It is built with React and Vite, and it uses NASA's API to fetch asteroid data. The application allows users to search for asteroids by date range, mark them as favorites, and view detailed information about each asteroid.
 
+## Live DEMO
+The app is deployed and ready to be used [here](https://react-frontend-production-ea4b.up.railway.app/)
+
 ## Features
 
 - View a list of asteroids with their details, including name, size, and hazardous status.
