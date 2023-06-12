@@ -43,6 +43,7 @@ const SearchBar = ({ handleDateChange, onOrderChange, onSearchTermChanged }) => 
                 <option value="">Order By</option>
                 <option value="diameter">Diameter</option>
                 <option value="name">Name</option>
+                <option value="distance">Distance</option>
             </OrderSelect>
         </SearchBarWrapper>
     );

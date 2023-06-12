@@ -20,8 +20,6 @@ export const AsteroidList = ({ startDate, endDate, searchTerm, orderBy }) => {
         retry: false,
         });
 
-    console.log(asteroids)
-
     const { data: favoriteAsteroids, refetch: refetchFavorites, isSuccess } = useQuery(
         'favoriteAsteroids',
         fetchFavoriteAsteroids,
@@ -54,6 +52,8 @@ export const AsteroidList = ({ startDate, endDate, searchTerm, orderBy }) => {
                 return a.distanceFromEarth - b.distanceFromEarth;
             case 'diameter':
                 return b.diameter.kilometers - a.diameter.kilometers;
+            case 'name':
+                return b.name.localeCompare(a.name);
             default:
                 return asteroids;
         }

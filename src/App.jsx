@@ -36,12 +36,15 @@ const App = () => {
                     <Route exact path="/" element={
                         <AsteroidsPage
                             searchTerm={searchTerm}
+                            setSearchTerm={setSearchTerm}
                             startDate={startDate}
+                            setStartDate={setStartDate}
                             endDate={endDate}
+                            setEndDate={setEndDate}
                             orderBy={orderBy}
                             onSearchTermChange={setSearchTerm}
                             onDateChange={handleDateChange}
-                            onOrderByChange={handleOrderBy}
+                            handleOrderBy={handleOrderBy}
                             handleDateChange={handleDateChange}
                         />
                     } />
