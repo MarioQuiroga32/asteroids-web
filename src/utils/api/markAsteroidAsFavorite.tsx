@@ -1,6 +1,6 @@
 export const markAsteroidAsFavorite = async (asteroidId) => {
     try {
-        const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/asteroids/favorites/${asteroidId}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/asteroids/favorites/${asteroidId}`, {
             method: 'POST',
         });
 
