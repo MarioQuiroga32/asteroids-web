@@ -1,15 +1,24 @@
 module.exports = {
-  env: { browser: true, es2020: true },
+  parser: '@typescript-eslint/parser',
   extends: [
-    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:react-hooks/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
   ],
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  settings: { react: { version: '18.2' } },
-  plugins: ['react-refresh'],
-  rules: {
-    'react-refresh/only-export-components': 'warn',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2021,
+    sourceType: 'module',
   },
-}
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  rules: {
+    // Add any custom rules specific to your project
+  },
+};
