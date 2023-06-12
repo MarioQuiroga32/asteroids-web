@@ -1,32 +1,74 @@
----
-title: Vite + React
-description: The default Vite + React starter, utilizing `serve` to serve the built app
-tags:
-  - node
-  - vite
-  - react
----
+# Asteroids List
 
-# Vite + React + Serve
+This project is a web application that displays a list of asteroids. It is built with React and Vite, and it uses NASA's API to fetch asteroid data. The application allows users to search for asteroids by date range, mark them as favorites, and view detailed information about each asteroid.
 
-This is a [Vite + React](https://vitejs.dev/guide/#trying-vite-online) starter that uses [serve](https://www.npmjs.com/package/serve).
+## Features
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/NeiLty?referralCode=ySCnWl)
+- View a list of asteroids with their details, including name, size, and hazardous status.
+- Search for asteroids by specifying a date range.
+- Mark asteroids as favorites and view a list of favorite asteroids.
+- Click on an asteroid to view its detailed information.
+- Sort the asteroid list by name.
+- Responsive design for optimal viewing on different devices.
 
-## ✨ Features
+## Technologies Used
 
-- Vite + React
-- Serve
+- React
+- Vite
+- TypeScript
+- styled-components
+- React Query
+- Cypress (for E2E testing)
+- MSW (Mock Service Worker) for API mocking during tests
+- Railway for deployment with CI/CD
 
-## 💁‍♀️ How to use
+## Getting Started
 
-- Install required dependencies with `npm install`
-- Start the server for local development `npm run dev`
+To get a local copy of the project up and running, follow these steps:
 
-## ❓ Why use `serve`
+1. Clone the repository:
 
-By default Railway will use the `start` script defined in package.json to run your app, the default Vite + React starter project does not come with any `start` script, so I have added `serve` as the start script, there are many benefits to using serve over just running the vite command. 
+```bash
+git clone <repository-url>
+```
 
- - `serve` is more suited to run single page apps
- - Uses less ram than `vite` or `vite preview` (<100mb)
- - Far more performant and stable
+2. Navigate to the project directory:
+
+```bash
+cd asteroids-list
+```
+
+3. Install the dependencies:
+
+```bash
+npm install
+```
+4. Start the development server:
+
+```bash
+npm run dev
+````
+The application will be running at http://localhost:3000.
+
+Running Tests
+The project includes end-to-end (E2E) tests written with Cypress. To run the tests, use the following command:
+
+``` bash
+npm run cypress
+``` 
+Cypress will open the test runner, allowing you to run and view the test results.
+
+## Deployment
+The project is set up for deployment with Railway, utilizing its CI/CD capabilities. Whenever changes are pushed to the main branch, Railway will automatically build and deploy the application.
+
+To set up the deployment, follow the instructions provided by Railway, including configuring the environment variables required for the application to run in the deployment environment.
+
+## Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request.
+
+Please follow the project's code of conduct and guidelines when contributing.
+
+## License
+This project is licensed under the MIT License.
+
+Let me know if you have any further questions!
