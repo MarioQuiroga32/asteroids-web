@@ -32,7 +32,9 @@ export const AsteroidList = ({ startDate, endDate, searchTerm, orderBy }) => {
 
     const handleToggleFavorite = (asteroidId) => {
         mutate(asteroidId);
-        setTimeout(() => isSuccess && refetchFavorites(), 100);
+        setTimeout(() => {
+            isSuccess && refetchFavorites()
+        }, 500);
     };
 
     const handleAsteroidClick = (asteroidId) => navigate(`/asteroids/${asteroidId}`);
