@@ -6,6 +6,7 @@ import { AsteroidListWrapper } from "./AsteroidList.styled";
 import { fetchAsteroids } from "../../utils/api/fetchAsteroids";
 import { fetchFavoriteAsteroids } from "../../utils/api/fetchFavoriteAsteroids";
 import { markAsteroidAsFavorite } from "../../utils/api/markAsteroidAsFavorite";
+import { debounce } from "../../utils/debounce";
 
 
 const isFavorite = (favoriteAsteroids, asteroidId) => favoriteAsteroids?.some((asteroid) => asteroid.id === asteroidId);
@@ -28,12 +29,10 @@ export const AsteroidList = ({ startDate, endDate, searchTerm, orderBy }) => {
         }
     );
 
-    const handleToggleFavorite = (asteroidId) => {
+    const handleToggleFavorite = debounce((asteroidId) => {
         mutate(asteroidId);
-        setTimeout(() => {
-            isSuccess && refetchFavorites()
-        }, 500);
-    };
+        isSuccess && setTimeout(refetchFavorites, 500);
+    }, 500);
 
     const handleAsteroidClick = (asteroidId) => navigate(`/asteroids/${asteroidId}`);
 
