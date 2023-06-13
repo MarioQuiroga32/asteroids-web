@@ -7,4 +7,8 @@ export const AsteroidListWrapper = styled.div`
   max-width: 100%; /* Set a maximum width */
   margin: 0 auto; /* Center the list */
   padding: 20px;
+  
+  @media (max-width: 600px) {
+    max-height: 300px;
+  }
 `;
